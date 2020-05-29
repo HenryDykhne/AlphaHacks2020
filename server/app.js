@@ -12,8 +12,6 @@ app.use(express.static(publicDirectoryPath,{
     extensions: ['html']
 }));
 
-app.
-
 app.listen(PORT, () => {
     console.log('server is up on port: ' + PORT)
 });
