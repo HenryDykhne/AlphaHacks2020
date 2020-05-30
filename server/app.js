@@ -26,6 +26,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/html/main.html"));
 });
 
+app.get("/contact", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/html/contact.html"));
+});
+
 app.get("/ventureSignUp", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/html/ventureSignUp.html"));
 });
@@ -67,11 +71,6 @@ app.post("/insertStartup", (req, res) => {
     });
     
     res.status(200).send("success");
-});
-
-//404  error page *Always Put Last*
-app.use((req, res) => {
-    res.status(404).sendFile(path.join(__dirname, "../public/html/404.html"));
 });
 
 //setup http server to listen on HTTP_PORT
