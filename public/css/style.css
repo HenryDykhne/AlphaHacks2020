@@ -95,31 +95,17 @@ section.content .card
 section.sec1
 {
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     background: url(../pictures/Bg1.jpg);
     background-size: cover;
-}
+    background-color: rbga(0, 0, 0, 0.3);
 
-section.sec2
-{
-    width: 100%;
-    height: 50vh;
-    background: url(../pictures/Bg2.jpg);
-    background-size: cover;
-}
-
-section.sec3
-{
-    width: 100%;
-    height: 100vh;
-    background: url(../pictures/Bg3.jpg);
-    background-size: cover;
 }
 
 section.sec4
 {
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     background: url(../pictures/Bg4.jpg);
     background-size: cover;
 }
