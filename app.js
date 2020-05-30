@@ -16,16 +16,16 @@ function onHttpStart()
 app.use(express.static('public'));
 
 //Setup a "route" to listen on the default url path "http://localhost"
-app.get("/", function(req, res){
+app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname,"/public/html/main.html"));
 });
 
-app.get("/listing", function(req, res){
-    res.sendFile(path.join(__dirname,"/public/html/listing.html"));
+app.get("/listing", (req, res) => {
+    res.sendFile(path.join(__dirname,"/public/html/companyListingCreate.html"));
 });
 
-app.get("/contact", function(req, res){
-    res.sendFile(path.join(__dirname,"/public/html/contact.html"));
+app.get("/contact", (req, res) => {
+    res.sendFile(path.join(__dirname,"/public/html/vcListingCreate.html"));
 });
 
 //404  error page *Always Put Last*
