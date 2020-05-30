@@ -43,20 +43,24 @@ app.post("/insertStartup", (req, res) => {
     });
 
     db.serialize(() => {
-        let insertRequest = "";
+        let insertStartupRequest = "";
         let startupID = Date.now()
-        insertRequest += `INSERT INTO startup (startup_id,name,yt_link,email,content)
-        VALUES ("`+startupID+`","`+req.body.name+`","`+req.body.youtube+`","`+req.body.email+`","`+req.body.content+`");`;
+        insertStartupRequest += `INSERT INTO startup (startup_id,name,yt_link,email,content)
+        VALUES (`+startupID+`,"`+req.body.name+`","`+req.body.youtube+`","`+req.body.email+`","`+req.body.content+`")`;
 
-        req.body.tags.forEach(tag => insertRequest += `INSERT OR IGNORE INTO startTag (tag_text) VALUES("`+tag+`");`);
-        req.body.tags.forEach(tag => insertRequest += `INSERT OR IGNORE INTO startupTostartTag (startup_id, tag_text) VALUES("`+startupID+`","`+tag+`");`);
+        let insertStartupTagRequest = "INSERT OR IGNORE INTO startTag (tag_text) VALUES ";
+        req.body.tags.forEach(tag => insertStartupTagRequest += `("`+tag+`"), `);
+
+        let insertStartupToTagRequest = "INSERT OR IGNORE INTO startupTostartTag (startup_id, tag_text) VALUES ";
+        req.body.tags.forEach(tag => insertStartupToTagRequest += `(`+startupID+`,"`+tag+`"), `);
         
-        db.each(insertRequest, (err, row) => {
-            if (err) {
-                console.error(err.message);
-            }
-            //console.log(row.id + "\t" + row.name);
-        });
+        insertStartupTagRequest = insertStartupTagRequest.slice(0, -2); 
+        insertStartupToTagRequest = insertStartupToTagRequest.slice(0, -2); 
+        console.log(insertStartupToTagRequest)
+        console.log(insertStartupTagRequest)
+        db.run(insertStartupRequest)
+        .run(insertStartupTagRequest)
+        .run(insertStartupToTagRequest);
     });
 
     db.close((err) => {
