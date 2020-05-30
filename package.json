@@ -1,8 +1,13 @@
 {
-  "name": "AlphaHacks2020",
+  "name": "alphahacks2020",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Hackathon Contest",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "swiper": "^5.4.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/app.js"
@@ -11,17 +16,10 @@
     "type": "git",
     "url": "git+https://github.com/HenryDykhne/AlphaHacks2020.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/HenryDykhne/AlphaHacks2020/issues"
   },
-  "homepage": "https://github.com/HenryDykhne/AlphaHacks2020#readme",
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  },
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "homepage": "https://github.com/HenryDykhne/AlphaHacks2020#readme"
 }

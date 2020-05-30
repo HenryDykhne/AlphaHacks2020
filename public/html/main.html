@@ -2,78 +2,108 @@
 
 <html lang="en">
 
+<!-- Script -->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<!-- Main Js -->
+<script src="/public/js/main.js"></script>
+
+
+<!-- Head Start -->
 <head>
-	<title>Eli-Henry Dykhne</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link href="style.css" type="text/css" rel="stylesheet">
-	<title>VC-Link</title>
+  <title>VCLink</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="" />
+  <meta name="keyword" content="VCLink, Buy, Sell," />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <title>VC-Link</title>
+
+  <!-- CSS -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Swiper -->
+  <link href="../css/swiper.min.css" type="text/css" rel="stylesheet" />
+  <!-- Main Css -->
+  <link href="../css/style.css" type="text/css" rel="stylesheet" />
+
 </head>
 
 <body>
-	
-	<table class="table table-bordered table-striped mb-0">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">6</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-	
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous">
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <h1> VCLinks</h1>
+    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#listings">Listings</a></li>
+      <li><a href="#testamonials">Testamonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+  <!-- Home Content -->
+  <section id="home"></section>
+  <section class="sec1"></section>
+
+
+  <!-- About Content -->
+  <section class="content" id="about">
+    <H1>PLEASE TELL US ABOUT WHAT THIS IS PLEASE</H1>
+    <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, eaque. Eos provident alias, explicabo dolor exercitationem molestiae unde, 
+      optio eveniet eaque nihil incidunt ad.lorem Quos ad quaerat eaque molestiae assumenda!</h3>
+  </section>
+
+  <section class="sec2"></section>
+
+
+  <!-- Listing Content -->
+  <section class="content" id="listings">
+
+  </section>
+  <div class="listingButton">
+    <button >View More Kickstarters</button>
+  </div>
+  <section class="sec3"></section>
+
+
+  <!-- testamonials Content -->
+  <section class="content" id="testamonials">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit perspiciatis velit officia, nam aspernatur voluptates necessitatibus sit aliquam voluptate sunt dignissimos vitae, tenetur pariatur ratione non. Labore autem harum exercitationem!lorem</p>
+  </section>
+  <section class="sec4"></section>
+
+
+  <!-- Contect Content -->
+  <section class="content" id="contact">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime quisquam sint doloremque accusantium laudantium, nostrum sequi quia voluptas? Aut consequuntur earum exercitationem error itaque nisi, odio hic sit facilis mollitia.</p>
+
+  </section>
+
+    <!-- Scripts -->
+    <script>
+      $(window).on('scroll', function(){
+    if ($(window).scrollTop()){
+        $('nav').addClass('black');
+    }
+    else
+    {
+        $('nav').removeClass('black');
+    } 
+    });
     </script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous">
-    </script>
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
 </body>
+
+
+
 
 </html>
