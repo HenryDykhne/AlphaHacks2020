@@ -35,7 +35,7 @@ app.get("/companySignUp", (req, res) => {
 });
 
 app.post("/insertStartup", (req, res) => {
-    let db = new sqlite3.Database('vcLinkDB.db', (err) => {
+    let db = new sqlite3.Database('server/vcLinkDB.db', (err) => {
         if (err) {
             console.error(err.message);
         }
@@ -45,7 +45,7 @@ app.post("/insertStartup", (req, res) => {
     db.serialize(() => {
         let insertRequest = "";
         let startupID = Date.now()
-        insertRequest += `INSERT INTO startup (startup,name,yt_link,email,content)
+        insertRequest += `INSERT INTO startup (startup_id,name,yt_link,email,content)
         VALUES ("`+startupID+`","`+req.body.name+`","`+req.body.youtube+`","`+req.body.email+`","`+req.body.content+`");`;
 
         req.body.tags.forEach(tag => insertRequest += `INSERT OR IGNORE INTO startTag (tag_text) VALUES("`+tag+`");`);
@@ -65,6 +65,8 @@ app.post("/insertStartup", (req, res) => {
         }
         console.log('Close the database connection.');
     });
+    
+    res.status(200).send("success");
 });
 
 //404  error page *Always Put Last*
