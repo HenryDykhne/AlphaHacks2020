@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Company Listing</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+
+
+
+
+  <!-- Swiper -->
+  <link href="../css/swiper.min.css" type="text/css" rel="stylesheet" />
+  <!-- Main Css -->
+  <link href="../css/style.css" type="text/css" rel="stylesheet" />
+
+
+<style type="text/css">
+	body
+{
+    position: relative;
+    height: 100%;
+    background-color: #262626;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.form-style-8{
+	font-family: 'Open Sans Condensed', arial, sans;
+	width: 500px;
+	padding: 30px;
+	background: #FFFFFF;
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+.form-style-8 h2{
+	background: #27d87d;
+	text-transform: uppercase;
+	font-family: 'Open Sans Condensed', sans-serif;
+
+	font-size: 18px;
+	font-weight: 100;
+	padding: 20px;
+	margin: -30px -30px 30px -30px;
+}
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 textarea,
+.form-style-8 select 
+{
+
+	overflow-wrap: break-word;
+	margin-top: 8%;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+	font: 16px Arial, Helvetica, sans-serif;
+	height: 45px;
+}
+.form-style-8 textarea{
+	resize:none;
+	overflow: hidden;
+}
+.form-style-8 input[type="button"], 
+.form-style-8 input[type="submit"]{
+	-moz-box-shadow: inset 0px 1px 0px 0px #27d87d;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #27d87d;
+	box-shadow: inset 0px 1px 0px 0px #27d87d;
+	background-color: #27d87d;
+	border: 1px solid #27d87d;
+	display: inline-block;
+	cursor: pointer;
+
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.form-style-8 input[type="button"]:hover, 
+.form-style-8 input[type="submit"]:hover {
+	background:linear-gradient(to bottom, #27d87d 5%, #27d87d 100%);
+	background-color:#27d87d;
+}
+nav
+{
+   position: fixed; 
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100px;
+   padding: 10px 100px;
+   box-sizing: border-box;
+   transition: .5s;
+}
+
+nav.black
+{
+    background: rgba(0, 0, 0, .8);
+    height: 80px;
+    padding: 10px 50px;
+}
+nav.black .logo img
+{
+    height: 60px;
+}
+
+nav .logo
+{
+    float:left;
+    color: #fff;
+}
+
+nav.logo img
+{
+    height: 80px;
+    transition: .5s;
+}
+
+nav ul
+{
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li
+{
+    list-style: none;
+}
+nav ul li a
+{
+    line-height: 80px;
+    color: #fff;
+    padding: 5px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5;
+    font-family:  'Roboto', sans-serif ;
+}
+nav.black ul li a
+{
+    color: #fff;
+    line-height: 60px;
+}
+nav ul li a.active,
+nav ul li a:hover
+{
+color: #fff;
+background: #27d87d;
+
+}
+</style>
+
+
+
+</head>
+
+<body>
+  <nav>
+    <div class="logo" >
+      <h1> VCLinks</h1>
+    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#listings">Listings</a></li>
+      <li><a href="#testamonials">Testamonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+<div class="form-style-8" style="margin-top: 100px">
+  <h2>Company Listing</h2>
+  <form>
+    <input type="text" name="field1" placeholder="Name" />
+    <input type="email" name="field2" placeholder="Email" />
+    <input type="url" name="field3" placeholder="Youtube Promotional Link" />
+
+	<textarea placeholder="Description" onkeyup="adjust_textarea(this)"style="height:100px;"></textarea>
+    <input type="button" value="Create Listing" />
+  </form>
+</div>
+
+</body>
+
+</html>
