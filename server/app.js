@@ -26,6 +26,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/html/main.html"));
 });
 
+app.get("/about", (req, res) => {
+    res.sendFile(path.join(__dirname,"../public/html/about.html"));
+});
+
 app.get("/contact", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/html/contact.html"));
 });
@@ -81,15 +85,21 @@ app.post("/getStartupsMatchTags", (req, res) => {
     });
 
     db.serialize(() => {
-        let tagList = "";
-        req.body.tags.forEach(tag => tagList += `"` + tag + `",`);
-        tagList = tagList.slice(0, -1); 
-        selectQuery = `SELECT *
-        FROM startup
-        INNER JOIN startupTostartTag on startup.startup_id = startupTostartTag.startup_id
-        WHERE tag_text in (`+ tagList+`)
-        GROUP BY startup.startup_id
-        HAVING COUNT(*) = ` + req.body.tags.length + `;`;
+        let selectQuery = ""
+        if (req.body.tags.length === 0) {
+            selectQuery = `SELECT * FROM startup;`;
+        } else {
+            let tagList = "";
+            req.body.tags.forEach(tag => tagList += `"` + tag + `",`);
+            tagList = tagList.slice(0, -1); 
+            selectQuery = `SELECT *
+                FROM startup
+                INNER JOIN startupTostartTag on startup.startup_id = startupTostartTag.startup_id
+                WHERE tag_text in (`+ tagList+`)
+                GROUP BY startup.startup_id
+                HAVING COUNT(*) = ` + req.body.tags.length + `;`;
+        }
+        
         console.log(selectQuery)
         db.all(selectQuery, [], (err, rows) => {
             if (err) {
@@ -153,15 +163,21 @@ app.post("/getVCMatchTags", (req, res) => {
     });
 
     db.serialize(() => {
-        let tagList = "";
-        req.body.tags.forEach(tag => tagList += `"` + tag + `",`);
-        tagList = tagList.slice(0, -1); 
-        selectQuery = `SELECT *
-        FROM vc
-        INNER JOIN vcTovcTag on vc.vc_id = vcTovcTag.vc_id
-        WHERE tag_text in (`+ tagList+`)
-        GROUP BY vc.vc_id
-        HAVING COUNT(*) = ` + req.body.tags.length + `;`;
+        let selectQuery = ""
+        if (req.body.tags.length === 0) {
+            selectQuery = `SELECT * FROM vc;`;
+        } else {
+            let tagList = "";
+            req.body.tags.forEach(tag => tagList += `"` + tag + `",`);
+            tagList = tagList.slice(0, -1); 
+            selectQuery = `SELECT *
+                FROM vc
+                INNER JOIN vcTovcTag on vc.vc_id = vcTovcTag.vc_id
+                WHERE tag_text in (`+ tagList+`)
+                GROUP BY vc.vc_id
+                HAVING COUNT(*) = ` + req.body.tags.length + `;`;
+        }
+        
         console.log(selectQuery)
         db.all(selectQuery, [], (err, rows) => {
             if (err) {
