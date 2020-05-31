@@ -1,6 +1,6 @@
 # AlphaHacks2020
 
-To pull from master branch, as new vcLinkDB.db must be created.
+To pull from master branch, a new vcLinkDB.db must be created.
 
 Steps for pulling from master branch
 
