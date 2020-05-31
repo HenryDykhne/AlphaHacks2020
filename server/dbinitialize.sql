@@ -64,12 +64,6 @@ VALUES (7777777777777,"shopping");
 
 --LOAD STARTUP MOCK DATA
 INSERT OR IGNORE INTO startup (startup_id,name,yt_link,email,content)
-VALUES (1590878630925,"bigMoneyInc","https://www.youtube.com/embed/dQw4w9WgXcQ","jeff.bezos@ownsyourmom.com","xd");
-
-INSERT OR IGNORE INTO startup (startup_id,name,yt_link,email,content)
-VALUES (2222222222222,"hahahahahah","https://www.youtube.com/embed/dQw4w9WgXcQ","lul.xd@ownsyourmom.com","hohohoho");
-
-INSERT OR IGNORE INTO startup (startup_id,name,yt_link,email,content)
 VALUES (3333333333333,"StartChain","https://www.youtube.com/embed/SSo_EIwHSd4","jeffcarlos@startchain.io","We are a group of individuals seeking experienced guidance on monetizing our Smart Contract implementation, preferably in the realm of Fintech and Law. 
 We're looking for forward thinking investors interested in collaborating and shipping an innovative product. We have alot of plans, let's connect and make them happen!");
 
