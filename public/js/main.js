@@ -85,9 +85,8 @@ async function getVCMatchTags(){
 }
 
 function myFunction(data) {
-
-    for ( i = 0; i < data.length; i++)
-    {
+    document.getElementById("showData").innerHTML = "";
+    for ( i = 0; i < data.length; i++) {
         document.getElementById("showData").innerHTML += 
         "<button type='button' class='collapsible'> " +
             data[i].name +
@@ -109,8 +108,7 @@ function myFunction(data) {
                 "</p>" +
             "</div>" +
         "</div>" 
-        "</div>"
-    ;
+        "</div>";
     }
 
     var coll = document.getElementsByClassName("collapsible");
