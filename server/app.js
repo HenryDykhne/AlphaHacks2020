@@ -79,6 +79,7 @@ app.post("/insertStartup", (req, res) => {
 
 
 app.post("/getStartupsMatchTags", (req, res) => {
+
     let db = new sqlite3.Database('server/vcLinkDB.db', (err) => {
         if (err) {
             console.error(err.message);
@@ -157,6 +158,7 @@ app.post("/insertVC", (req, res) => {
 });
 
 app.post("/getVCMatchTags", (req, res) => {
+
     let db = new sqlite3.Database('server/vcLinkDB.db', (err) => {
         if (err) {
             console.error(err.message);

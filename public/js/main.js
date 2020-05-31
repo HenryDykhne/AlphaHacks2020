@@ -5,7 +5,7 @@ async function insertStartup(){
         "youtube": document.getElementById("listCompany").elements.namedItem("youtubeLink").value,
         "email": document.getElementById("listCompany").elements.namedItem("companyEmail").value,
         "content": document.getElementById("listCompany").elements.namedItem("companyDescription").value,
-        "tags": document.getElementById("listCompany").elements.namedItem("companyTags").value.replace(/\s/g, "").toLowerCase().split(',')
+        "tags": document.getElementById("listCompany").elements.namedItem("companyTags").value.replace(/\s/g, "").toLowerCase().split(',').filter(element => ![''].includes(element))
     }
 
 
@@ -25,7 +25,8 @@ async function insertStartup(){
 
 
 async function getStartupsMatchTags(){
-    let data = {"tags":["shopping", "dogs"]}
+
+    let data = {"tags": document.getElementById("myInput").value.replace(/\s/g, "").toLowerCase().split(',').filter(element => ![''].includes(element))} 
 
     fetch('/getStartupsMatchTags', {
         method: 'POST', // or 'PUT'
@@ -36,19 +37,38 @@ async function getStartupsMatchTags(){
     }).then(response=>response.json())
     .then(data => {
         console.log('Success:', data);
-        myFunction(data);
+        showCompanyData(data);
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
+async function insertvc(){
+
+    let data = {
+        "name": document.getElementById("listVenture").elements.namedItem("ventureName").value,
+        "text": document.getElementById("listVenture").elements.namedItem("ventureDescription").value,
+        "email": document.getElementById("listVenture").elements.namedItem("ventureEmail").value,
+        "tags": document.getElementById("listVenture").elements.namedItem("ventureTag").value.replace(/\s/g, "").toLowerCase().split(',').filter(element => ![''].includes(element))
+    }
+
+    fetch('/insertvc', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    }).then(response=>response.json())
+    .then(data => {
+        console.log('Success:', data);
     }).catch((error) => {
         console.error('Error:', error);
     });
 }
 
 async function getVCMatchTags(){
-    let data = {
-        "name": "Kevin O'Donnel",
-        "text": "Kevin O'Donnel's first venture was selling unwanted newspapers for dimes. Now, as the owner of his own VC firm, Kevin wants to offer a leg up to promising entrepreneurs and innovators. Kevin has decades of experience in monetizing ideas, avoiding stagnation and providing expert marketing advice. Kevin is interested in investing in: Tech, Finance, Law, Multimedia. Reach out to Kevin and give him your pitch!",
-        "email": "kdo@odonnelventures.com",
-        "tags":["finance", "shopping", "dogs"]
-    }
+
+    let data = {"tags": document.getElementById("myInput").value.replace(/\s/g, "").toLowerCase().split(',').filter(element => ![''].includes(element))}
 
     fetch('/getVCMatchTags', {
         method: 'POST', // or 'PUT'
@@ -59,13 +79,37 @@ async function getVCMatchTags(){
     }).then(response=>response.json())
     .then(data => {
         console.log('Success:', data);
-        myFunction(data);
+        showInvestorData(data);
     }).catch((error) => {
         console.error('Error:', error);
     });
 }
 
-function myFunction(data) {
+function showInvestorData(data) {
+    document.getElementById("showData").innerHTML = "";
+    for ( i = 0; i < data.length; i++) {
+        document.getElementById("showData").innerHTML += 
+        "<button type='button' class='collapsible'> " +
+            data[i].name +
+        "</button>" + 
+        "<div class='ventureContent'>" +        
+            "<div class='row'> " +
+                "<div style='margin: 30px' class='col'>" +
+                    "<p>" +
+                        data[i].name +
+                    "</p>" +
+                    "<p>" +
+                        data[i].text +
+                    "</p>" +
+                    "<p>" +
+                        "Email: " + data[i].email +
+                    "</p>" +
+                "</div>" +
+            "</div>" 
+        "</div>";
+    }
+}
+function showCompanyData(data) {
     document.getElementById("showData").innerHTML = "";
     for ( i = 0; i < data.length; i++) {
         document.getElementById("showData").innerHTML += 
@@ -91,6 +135,7 @@ function myFunction(data) {
         "</div>" 
         "</div>";
     }
+}
 
     var coll = document.getElementsByClassName("collapsible");
     var i;
@@ -106,9 +151,6 @@ function myFunction(data) {
         }
       });
     }
-
-
-}
 
 
 

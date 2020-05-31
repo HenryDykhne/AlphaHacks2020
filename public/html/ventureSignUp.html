@@ -9,6 +9,7 @@
   <script src="fontawesome.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="../js/main.js"></script>
   
   <!-- CSS -->
   <!-- Bootstrap -->
@@ -39,12 +40,12 @@
 
     <div class="form-style-8" style="margin-top: 100px">
       <h2>Venture Capitalist Listing</h2>
-      <form>
-        <input type="text" name="field1" placeholder="Name" />
-        <input type="email" name="field2" placeholder="Email" />
-        <textarea placeholder="Description" onkeyup="adjust_textarea(this)"style="height:100px;"></textarea>
-        <textarea placeholder="Enter Tags Separated by Commas (Examples: Fintech, Blockchain...)" onkeyup="adjust_textarea(this)"></textarea>
-        <input type="button" value="Create Listing" />
+      <form id="listVenture">
+        <input type="text" name="ventureName" placeholder="Name" />
+        <input type="email" name="ventureEmail" placeholder="Email" />
+        <textarea name="ventureDescription" placeholder="Description" onkeyup="adjust_textarea(this)"style="height:100px;"></textarea>
+        <textarea name="ventureTag" placeholder="Enter Tags Separated by Commas (Examples: Fintech, Blockchain...)" onkeyup="adjust_textarea(this)"></textarea>
+        <a href="/"><input type="button" value="Create Listing" onclick="insertvc()"></a>
       </form>
     </div>
 
