@@ -29,7 +29,6 @@ async function getStartupsMatchTags(){
 
     fetch('/getStartupsMatchTags', {
         method: 'POST', // or 'PUT'
-        body: data,
         headers: {
             'Content-Type': 'application/json',
         },
@@ -42,6 +41,8 @@ async function getStartupsMatchTags(){
         console.error('Error:', error);
     });
 }
+
+
 
 
 function myFunction(data) {

@@ -53,12 +53,14 @@
     <hr style="height:5px;border-width:0;color:#006732;background-color: #006732"/>
     <!-- Search Bar -->
     <div class="row" id="searchBar">
-      <div class="col-md-11">
+      <div class="col">
        <input class="form-control" id="myInput" type="text" placeholder="Search..">
       </div>
-      <div class="col-md-1">
-        <button class="searchButton" style="float: right;" onclick="getStartupsMatchTags()">Search By VC</button>
-        <button class="searchButton" style="float: right;" onclick="getStartupsMatchTags()">Search By CV</button>
+      <div class="col-md-3">
+        <button class="searchButton" style="float: right;" onclick="getVCMatchTags()">Search By Venture</button>
+      </div>
+      <div class="col-md-3">
+        <button class="searchButton" style="float: right;" onclick="getStartupsMatchTags()">Search By Company</button>
       </div>
     </div>
     <hr style="height:5px;border-width:0;color:#006732;background-color: #006732; margin-bottom: 20px; margin-top: 20px;"/>
