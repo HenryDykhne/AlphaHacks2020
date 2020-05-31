@@ -42,13 +42,32 @@ async function getStartupsMatchTags(){
     });
 }
 
+async function getVCMatchTags(){
+    let data = {
+        "name": "Kevin O'Donnel",
+        "text": "Kevin O'Donnel's first venture was selling unwanted newspapers for dimes. Now, as the owner of his own VC firm, Kevin wants to offer a leg up to promising entrepreneurs and innovators. Kevin has decades of experience in monetizing ideas, avoiding stagnation and providing expert marketing advice. Kevin is interested in investing in: Tech, Finance, Law, Multimedia. Reach out to Kevin and give him your pitch!",
+        "email": "kdo@odonnelventures.com",
+        "tags":["finance", "shopping", "dogs"]
+    }
 
-
+    fetch('/getVCMatchTags', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    }).then(response=>response.json())
+    .then(data => {
+        console.log('Success:', data);
+        myFunction(data);
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
+}
 
 function myFunction(data) {
-
-    for ( i = 0; i < data.length; i++)
-    {
+    document.getElementById("showData").innerHTML = "";
+    for ( i = 0; i < data.length; i++) {
         document.getElementById("showData").innerHTML += 
         "<button type='button' class='collapsible'> " +
             data[i].name +
@@ -70,8 +89,7 @@ function myFunction(data) {
                 "</p>" +
             "</div>" +
         "</div>" 
-        "</div>"
-    ;
+        "</div>";
     }
 
     var coll = document.getElementsByClassName("collapsible");
