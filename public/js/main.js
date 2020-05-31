@@ -43,39 +43,53 @@ async function getStartupsMatchTags(){
 }
 
 
-
 function myFunction(data) {
 
-    document.getElementById("showData").innerHTML = 
-    " <div id='accordian'> " + 
-        "<div class='card'> " +
-          "<div class='card-header' id='headingOne'> " +
-            "<h5 class'mb-0'> " +
-              "<button class='btn btn-link collapsed' data-toggle='collapse' data-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'> " +
-              data[6].name +
-          "</button></h5></div>" +
-          "<div id='collapseOne' class='collapse' aria-labelledby='headingOne' data-parent='#accordion'> " +
-            "<div class='card-body'> " +
-                "<div class='row'> " +
-                    "<div class='col-md-6'>" +
-                        "<p>" +
-                            data[6].content +
-                        "</p>" +
-                        "<p>" +
-                            "Email: " + data[6].email +
-                        "</p>" +
-                    "</div>" +
-                    "<div class='col-md-6'>" +
-                        "<iframe width='560' height='315' src='https://www.youtube.com/embed/gu-trYf96xo' ></iframe>" +
-                    "</div>" +
-                "</div>" +
-          "</div></div> " +
-        "</div>" +
-      "</div>"
+    for ( i = 0; i < data.length; i++)
+    {
+        document.getElementById("showData").innerHTML += 
+        "<button type='button' class='collapsible'> " +
+            data[i].name +
+        "</button>" + 
+        "<div class='ventureContent'>" +        
+            "<div class='row'> " +
+            "<div class='col-md-auto'>" +
+                "<iframe style='margin: 30px ' width='315' height='250' src='" + data[i].youtube + "' ></iframe>" +  
+            "</div>" +
+            "<div style='margin: 30px' class='col-md-6'>" +
+                "<p>" +
+                    data[i].name +
+                "</p>" +
+                "<p>" +
+                    data[i].content +
+                "</p>" +
+                "<p>" +
+                    "Email: " + data[i].email +
+                "</p>" +
+            "</div>" +
+        "</div>" 
+        "</div>"
     ;
+    }
+
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
 
 
 }
+
 
 
 

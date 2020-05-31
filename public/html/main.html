@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link  rel="stylesheet" href="../css/fontawesome.min.css">
 
+
 </head>
 
 <body>
@@ -34,11 +35,11 @@
       <h1> VCLinks</h1>
     </div>
     <ul>
-      <li><a href="/main">Home</a></li>
+      <li><a href="#">Home</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li><a href="/companySignUp.html">Company Signup</a></li>
-      <li><a href="/ventureSignUp.html">Venture Signup</a></li>
+      <li><a href="/companySignUp">Company Signup</a></li>
+      <li><a href="/ventureSignUp">Venture Signup</a></li>
     </ul>
 
   </nav>
@@ -51,14 +52,18 @@
     <H1>Listings</H1>
     <hr style="height:5px;border-width:0;color:#006732;background-color: #006732"/>
     <!-- Search Bar -->
-    <div id="searchBar">
+    <div class="row" id="searchBar">
+      <div class="col-md-11">
        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+      </div>
+      <div class="col-md-1">
+        <button class="searchButton" style="float: right;" onclick="getStartupsMatchTags()">Search</button>
+      </div>
     </div>
     <hr style="height:5px;border-width:0;color:#006732;background-color: #006732; margin-bottom: 20px; margin-top: 20px;"/>
     <!-- Sidde Bar Filter Form -->
       <div class="row">
         <div class="col">
-          <button onclick="getStartupsMatchTags()">Click ME</button>
             <div id="showData"></div>
         </div>
 
@@ -67,6 +72,23 @@
       <hr style="height:5px;border-width:0;color:#006732;background-color: #006732; margin-bottom: 20px; margin-top: 20px;"/>
   </section>
 
+  
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
 
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
