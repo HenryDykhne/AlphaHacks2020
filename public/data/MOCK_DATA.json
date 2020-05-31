@@ -1,0 +1,31 @@
+{
+	{
+	    "startup_id": 1590878630925,
+	    "name": "StartChain",
+	    "youtube": "https://www.youtube.com/watch?v=SSo_EIwHSd4",
+	    "email": "jeffcarlos@startchain.io",
+	    "content": "We are a group of individuals seeking experienced guidance on monetizing our Smart Contract implementation, preferably in the realm of Fintech and Law. 
+		We're looking for forward thinking investors interested in collaborating and shipping an innovative product. We have alot of plans, let's connect and make them happen!",
+	    "tags":["finance", "tech", "law"]
+	},
+
+	{
+		"startup_id": 2222222222222,
+	    "name": "ShareCare",
+	    "youtube": "https://www.youtube.com/watch?v=1LBu2aslGyA",
+	    "email": "johnmiurda@newimmune.com",
+	    "content": "Founded by a group of exhausted medical staff, we seek to reforge the health industry and erase it's inefficiencies. Our first product enables practitioners and patients to connect without 
+	the bureacracy. Patients get the care they need, and practitioners can do they jobs they signed up for. We're looking for several investors, particularly those involved in Health, Government and Tech. Contact John Miurda for our 2021 roadmap and further details.",
+	    "tags":["medicine", "tech", "government"]
+	},
+
+	{
+		"startup_id": 3333333333333,
+	    "name": "Solomon Expeditions Inc.",
+	    "youtube": "https://www.youtube.com/watch?v=p-HxhJLUYhk",
+	    "email": "solomonjames@solomon.com",
+	    "content": "Since establishing in 2010, we've succesfully managed 14 early stage gold exploration projects. We have a team of top geologists and have a solid system of evaluating future projects. 
+	So far, we've given our shareholders acquisition options for top performing mines across Ontario. However, we're looking for financing and expertise for some endeavours outside our expertise. We would love to be in conversation with investors in the Mining business! Please talk to Solomon for more details.",
+	    "tags":["mining", "energy"]
+	},
+}
