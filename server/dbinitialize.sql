@@ -12,10 +12,9 @@ email TEXT NOT NULL,
 content TEXT NOT NULL
 );
 
-CREATE TABLE startupToStartTag
-(
+CREATE TABLE startupToStartTag (
 startup_id INTEGER,
-tag_text TEXT
+tag_text TEXT,
 primary key (startup_id,tag_text)
 );
 
