@@ -111,6 +111,79 @@ app.get("/getStartupsMatchTags", (req, res) => {
     
 });
 
+app.post("/insertVC", (req, res) => {
+    let db = new sqlite3.Database('server/vcLinkDB.db', (err) => {
+        if (err) {
+            console.error(err.message);
+        }
+        console.log('Connected to the database.');
+    });
+
+    db.serialize(() => {
+        let insertStartupRequest = "";
+        let vcID = Date.now()
+        //building insertion requests for toxi schema
+        insertStartupRequest += `INSERT INTO vc (vc_id,name,text,email)
+        VALUES (`+vcID+`,"`+req.body.name+`","`+req.body.text+`","`+req.body.email+`")`;
+
+        let insertStartupToTagRequest = "INSERT OR IGNORE INTO vcTovcTag (vc_id, tag_text) VALUES ";
+        req.body.tags.forEach(tag => insertStartupToTagRequest += `(`+vcID+`,"`+tag+`"), `);
+        insertStartupToTagRequest = insertStartupToTagRequest.slice(0, -2); 
+
+        db.run(insertStartupRequest)
+        .run(insertStartupToTagRequest);
+    });
+
+    db.close((err) => {
+        if (err) {
+            console.error(err.message);
+        }
+        console.log('Close the database connection.');
+    });
+    
+    res.status(200).send(res.body);
+});
+
+app.get("/getVCMatchTags", (req, res) => {
+    let db = new sqlite3.Database('server/vcLinkDB.db', (err) => {
+        if (err) {
+            console.error(err.message);
+        }
+        console.log('Connected to the database.');
+    });
+
+    db.serialize(() => {
+        let tagList = "";
+        req.body.tags.forEach(tag => tagList += `"` + tag + `",`);
+        tagList = tagList.slice(0, -1); 
+        selectQuery = `SELECT *
+        FROM vc
+        INNER JOIN vcTovcTag on vc.vc_id = vcTovcTag.vc_id
+        WHERE tag_text in (`+ tagList+`)
+        GROUP BY vc.vc_id
+        HAVING COUNT(*) = ` + req.body.tags.length + `;`;
+        console.log(selectQuery)
+        db.all(selectQuery, [], (err, rows) => {
+            if (err) {
+                res.status(500).send(err);
+            } else {
+                console.log(rows);
+                res.status(200).send(rows);
+            }
+        });
+
+    });
+
+    db.close((err) => {
+        if (err) {
+            console.error(err.message);
+        }
+        console.log('Close the database connection.');
+    });
+    
+});
+
+
 //404  error page *Always Put Last*
 app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, "../public/html/404.html"));
