@@ -45,21 +45,15 @@ app.post("/insertStartup", (req, res) => {
     db.serialize(() => {
         let insertStartupRequest = "";
         let startupID = Date.now()
+        //building insertion requests for toxi schema
         insertStartupRequest += `INSERT INTO startup (startup_id,name,yt_link,email,content)
         VALUES (`+startupID+`,"`+req.body.name+`","`+req.body.youtube+`","`+req.body.email+`","`+req.body.content+`")`;
 
-        let insertStartupTagRequest = "INSERT OR IGNORE INTO startTag (tag_text) VALUES ";
-        req.body.tags.forEach(tag => insertStartupTagRequest += `("`+tag+`"), `);
-
         let insertStartupToTagRequest = "INSERT OR IGNORE INTO startupTostartTag (startup_id, tag_text) VALUES ";
         req.body.tags.forEach(tag => insertStartupToTagRequest += `(`+startupID+`,"`+tag+`"), `);
-        
-        insertStartupTagRequest = insertStartupTagRequest.slice(0, -2); 
         insertStartupToTagRequest = insertStartupToTagRequest.slice(0, -2); 
-        console.log(insertStartupToTagRequest)
-        console.log(insertStartupTagRequest)
+
         db.run(insertStartupRequest)
-        .run(insertStartupTagRequest)
         .run(insertStartupToTagRequest);
     });
 
@@ -72,6 +66,39 @@ app.post("/insertStartup", (req, res) => {
     
     res.status(200).send("success");
 });
+
+
+app.get("/getStartupsMatchTags", (req, res) => {
+    let db = new sqlite3.Database('server/vcLinkDB.db', (err) => {
+        if (err) {
+            console.error(err.message);
+        }
+        console.log('Connected to the database.');
+    });
+
+    db.serialize(() => {
+        let tagList = "";
+        req.body.tags.forEach(tag => tagList += `"` + tag + `",`);
+        tagList = tagList.slice(0, -1); 
+        selectQuery = `SELECT ID
+        FROM tableName
+        WHERE tag IN (`+tagList+`)
+        GROUP BY ID
+        HAVING COUNT(DISTINCT tag) = 2`;
+        db.each()
+
+    });
+
+    db.close((err) => {
+        if (err) {
+            console.error(err.message);
+        }
+        console.log('Close the database connection.');
+    });
+    
+    res.status(200).send("success");
+});
+
 
 //404  error page *Always Put Last*
 app.use((req, res) => {
