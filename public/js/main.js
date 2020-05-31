@@ -120,7 +120,7 @@ function showCompanyData(data) {
         "<div class='ventureContent'>" +        
             "<div class='row'> " +
             "<div class='col-md-auto'>" +
-                "<iframe style='margin: 30px ' width='315' height='250' src='" + data[i].youtube + "' ></iframe>" +  
+                "<iframe style='margin: 30px ' width='315' height='250' src='" + data[i].yt_link + "' ></iframe>" +  
             "</div>" +
             "<div style='margin: 30px' class='col-md-6'>" +
                 "<p>" +
