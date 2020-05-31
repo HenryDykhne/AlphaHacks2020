@@ -98,6 +98,7 @@ app.post("/getStartupsMatchTags", (req, res) => {
                 console.log(rows);
                 res.status(200).send(rows);
             }
+            console.log(rows);
         });
 
     });

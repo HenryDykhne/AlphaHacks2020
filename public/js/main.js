@@ -14,7 +14,7 @@ async function insertStartup(){
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-    })
+    }).then(response=>response.json())
     .then(data => {
         console.log('Success:', data);
     }).catch((error) => {
@@ -26,14 +26,14 @@ async function insertStartup(){
 async function getStartupsMatchTags(){
     let data = {"tags":["shopping", "dogs"]}
 
-    fetch('/insertStartup', {
+    fetch('/getStartupsMatchTags', {
         method: 'POST', // or 'PUT'
         body: data,
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-    })
+    }).then(response=>response.json())
     .then(data => {
         console.log('Success:', data);
         myFunction(data);
