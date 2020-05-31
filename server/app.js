@@ -72,7 +72,7 @@ app.post("/insertStartup", (req, res) => {
 });
 
 
-app.get("/getStartupsMatchTags", (req, res) => {
+app.post("/getStartupsMatchTags", (req, res) => {
     let db = new sqlite3.Database('server/vcLinkDB.db', (err) => {
         if (err) {
             console.error(err.message);
@@ -144,7 +144,7 @@ app.post("/insertVC", (req, res) => {
     res.status(200).send(res.body);
 });
 
-app.get("/getVCMatchTags", (req, res) => {
+app.post("/getVCMatchTags", (req, res) => {
     let db = new sqlite3.Database('server/vcLinkDB.db', (err) => {
         if (err) {
             console.error(err.message);

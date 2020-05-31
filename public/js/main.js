@@ -8,7 +8,7 @@ async function insertStartup(){
     }
 
     fetch('/insertStartup', {
-        method: 'GET', // or 'PUT'
+        method: 'POST', // or 'PUT'
         body: data,
         headers: {
             'Content-Type': 'application/json',
