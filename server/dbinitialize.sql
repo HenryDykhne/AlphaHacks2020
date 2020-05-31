@@ -98,19 +98,3 @@ VALUES (5555555555555,"dogs");
 
 INSERT OR IGNORE INTO startupTostartTag (startup_id,tag_text)
 VALUES (5555555555555,"shopping");
-
---LOOKUP STARTUP ITEMS BASED ON TAGS USING INNER JOIN
-SELECT *
-FROM startup
-INNER JOIN startupTostartTag on startup.startup_id = startupTostartTag.startup_id
-WHERE tag_text in ("shopping", "dogs")
-GROUP BY startup.startup_id
-HAVING COUNT(*) = 2;
-
---LOOKUP VC ITEMS BASED ON TAGS USING INNER JOIN
-SELECT *
-FROM vc
-INNER JOIN vcTovcTag on vc.vc_id = vcTovcTag.vc_id
-WHERE tag_text in ("shopping", "dogs")
-GROUP BY vc.vc_id
-HAVING COUNT(*) = 2;
