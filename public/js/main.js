@@ -1,20 +1,21 @@
 async function insertStartup(){
+
     let data = {
-        "name": "bigMoneyInc",
-        "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        "email": "jeff.bezos@ownsyourmom.com",
-        "content": "xd",
-        "tags":["finance", "dogs", "shopping"]
+        "name": document.getElementById("listCompany").elements.namedItem("companyName").value,
+        "youtube": document.getElementById("listCompany").elements.namedItem("youtubeLink").value,
+        "email": document.getElementById("listCompany").elements.namedItem("companyEmail").value,
+        "content": document.getElementById("listCompany").elements.namedItem("companyDescription").value,
+        "tags": document.getElementById("listCompany").elements.namedItem("companyTags").value.replace(/\s/g, "").toLowerCase().split(',')
     }
+
 
     fetch('/insertStartup', {
         method: 'POST', // or 'PUT'
-        body: data,
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-    }).then(response=>response.json())
+    }).then(response => response.json())
     .then(data => {
         console.log('Success:', data);
     }).catch((error) => {

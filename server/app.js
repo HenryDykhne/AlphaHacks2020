@@ -16,6 +16,7 @@ function onHttpStart() {
     console.log("Express http server listening on: " + HTTP_PORT);
 }
 
+
 //Middleware
 
 //Ability to use css, a linkage file
@@ -43,6 +44,7 @@ app.get("/companySignUp", (req, res) => {
 });
 
 app.post("/insertStartup", (req, res) => {
+
     let db = new sqlite3.Database('server/vcLinkDB.db', (err) => {
         if (err) {
             console.error(err.message);
@@ -72,7 +74,7 @@ app.post("/insertStartup", (req, res) => {
         console.log('Close the database connection.');
     });
     
-    res.status(200).send(res.body);
+    res.status(200).send(req.body);
 });
 
 
@@ -152,7 +154,7 @@ app.post("/insertVC", (req, res) => {
         console.log('Close the database connection.');
     });
     
-    res.status(200).send(res.body);
+    res.status(200).send(req.body);
 });
 
 app.post("/getVCMatchTags", (req, res) => {

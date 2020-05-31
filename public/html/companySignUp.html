@@ -44,14 +44,14 @@
 
     <div class="form-style-8" style="margin-top: 100px">
       <h2>Company Listing</h2>
-      <form>
-        <input type="text" name="field1" placeholder="Name" />
-        <input type="email" name="field2" placeholder="Email" />
-        <input type="url" name="field3" placeholder="Youtube Promotional Link" />
+      <form id="listCompany">
+        <input type="text" name="companyName" placeholder="Name" />
+        <input type="email" name="companyEmail" placeholder="Email" />
+        <input type="url" name="youtubeLink" placeholder="Youtube Promotional Link" />
 
-      <textarea placeholder="Description" onkeyup="adjust_textarea(this)"style="height:70px;"></textarea>
-      <textarea placeholder="Enter Tags Separated by Commas (Examples: Fintech, Blockchain...)" onkeyup="adjust_textarea(this)"></textarea>
-        <input type="button" value="Create Listing" onclick="getUsers()"/>
+      <textarea  name="companyDescription" placeholder="Description" onkeyup="adjust_textarea(this)"style="height:70px;"></textarea>
+      <textarea  name="companyTags" placeholder="Enter Tags Separated by Commas (Examples: Fintech, Blockchain...)" onkeyup="adjust_textarea(this)"></textarea>
+        <a href="/"><input type="button" value="Create Listing" onclick="insertStartup();"/></a>
       </form>
     </div>
 
