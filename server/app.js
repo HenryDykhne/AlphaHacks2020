@@ -100,7 +100,6 @@ app.post("/getStartupsMatchTags", (req, res) => {
             }
             console.log(rows);
         });
-
     });
 
     db.close((err) => {

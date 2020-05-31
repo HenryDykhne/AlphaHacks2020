@@ -42,6 +42,47 @@ async function getStartupsMatchTags(){
     });
 }
 
+async function insertvc(){
+    let data = {
+        "name": "Kevin O'Donnel",
+        "text": "Kevin O'Donnel's first venture was selling unwanted newspapers for dimes. Now, as the owner of his own VC firm, Kevin wants to offer a leg up to promising entrepreneurs and innovators. Kevin has decades of experience in monetizing ideas, avoiding stagnation and providing expert marketing advice. Kevin is interested in investing in: Tech, Finance, Law, Multimedia. Reach out to Kevin and give him your pitch!",
+        "email": "kdo@odonnelventures.com",
+        "tags":["finance", "shopping", "dogs"]
+    }
+
+    fetch('/insertvc', {
+        method: 'POST', // or 'PUT'
+        body: data,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    }).then(response=>response.json())
+    .then(data => {
+        console.log('Success:', data);
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
+async function getVCMatchTags(){
+    let data = {"tags":["shopping", "dogs"]}
+
+    fetch('/getVCMatchTags', {
+        method: 'POST', // or 'PUT'
+        body: data,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    }).then(response=>response.json())
+    .then(data => {
+        console.log('Success:', data);
+        myFunction(data);
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
+}
 
 
 function myFunction(data) {
