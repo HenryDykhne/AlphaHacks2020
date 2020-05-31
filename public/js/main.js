@@ -108,20 +108,7 @@ function showInvestorData(data) {
             "</div>" 
         "</div>";
     }
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-    
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
-    }
+    enableExpansion();
 }
 function showCompanyData(data) {
     document.getElementById("showData").innerHTML = "";
@@ -133,7 +120,7 @@ function showCompanyData(data) {
         "<div class='ventureContent'>" +        
             "<div class='row'> " +
             "<div class='col-md-auto'>" +
-                "<iframe style='margin: 30px ' width='315' height='250' src='" + data[i].youtube + "' ></iframe>" +  
+                "<iframe style='margin: 30px ' width='315' height='250' src='" + data[i].yt_link + "' ></iframe>" +  
             "</div>" +
             "<div style='margin: 30px' class='col-md-6'>" +
                 "<p>" +
@@ -151,24 +138,23 @@ function showCompanyData(data) {
     }
 
     var coll = document.getElementsByClassName("collapsible");
-    var i;
-    
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
-    }
+    enableExpansion();
 
 }
 
+function enableExpansion(){
+    var coll = document.getElementsByClassName("collapsible");
 
-
-
-
-
+    
+    for (var i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+        });
+    }
+}
