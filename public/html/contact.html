@@ -19,8 +19,6 @@
       <!-- CSS -->
       <!-- Bootstrap -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <!-- Swiper -->
-      <link   rel="stylesheet"href="../css/swiper.min.css" type="text/css" />
       <!-- Main Css -->
       <link  rel="stylesheet" href="../css/style.css" type="text/css" />
       <!-- Fontawsome -->
@@ -39,6 +37,8 @@
           <li><a href="main.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="companySignUp.html">Company Signup</a></li>
+          <li><a href="ventureSignUp.html">Venture Signup</a></li>
         </ul>
     
       </nav>
@@ -76,15 +76,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="overlay">
-              <div class="container">
-                  <div class="main-title">
-                      <h2>
-                          Message Us
-                      </h2>
-                  </div>
-                  <div class="row">
-                      <div class="col-lg-8 col-lg-offset-2 col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1">
+                      <div class="form-style-8">
                           <form action="php/sendMessage.php" method="post" id="contact_form">
                               <div class="input-row">
                                   <div class="form-group">
@@ -106,15 +98,11 @@
                                   <textarea class="form-control" placeholder="Your Message .." name="message" data-messageValidation></textarea>
                               </div>
                               <div>
-                                  <button type="submit" name="submit_contact_form">
-                                      <i class="fa fa-send-o "></i> Send Message
-                                  </button>
+                                <input type="button" value="Send Message" />
+                            
                               </div>
                           </form>
                       </div>
-                  </div>
-              </div>
-          </div>
           </div>
         </div>
     
