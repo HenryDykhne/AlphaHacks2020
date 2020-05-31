@@ -68,7 +68,7 @@ app.post("/insertStartup", (req, res) => {
         console.log('Close the database connection.');
     });
     
-    res.status(200).send("success");
+    res.status(200).send(res.body);
 });
 
 
@@ -84,12 +84,13 @@ app.get("/getStartupsMatchTags", (req, res) => {
         let tagList = "";
         req.body.tags.forEach(tag => tagList += `"` + tag + `",`);
         tagList = tagList.slice(0, -1); 
-        selectQuery = `SELECT ID
-        FROM tableName
-        WHERE tag IN (`+tagList+`)
-        GROUP BY ID
-        HAVING COUNT(DISTINCT tag) = 2`;
-        db.each()
+        selectQuery = `SELECT *
+        FROM startup
+        INNER JOIN startupTostartTag on startup.startup_id = startupTostartTag.startup_id
+        WHERE tag_text in (`+ tagList+`)
+        GROUP BY startup.startup_id
+        HAVING COUNT(*) = ` + req.body.tags.length + `;`;
+        db.run(selectQuery)
 
     });
 
@@ -99,8 +100,7 @@ app.get("/getStartupsMatchTags", (req, res) => {
         }
         console.log('Close the database connection.');
     });
-    
-    res.status(200).send("success");
+    res.status(200).send()
 });
 
 //404  error page *Always Put Last*
