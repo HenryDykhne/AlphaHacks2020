@@ -32,14 +32,13 @@
 
 <body>
   <!-- Navigation Bar -->
-  <nav>
+  <nav class="contact">
     <div class="logo">
       <h1> VCLinks</h1>
     </div>
     <ul>
       <li><a href="main.html">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#listings">Listings</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
 
@@ -49,53 +48,16 @@
   <section class="sec1"></section>
   <!-- Listing Content -->
   <section class="content" id="listings">
+    <hr style="height:5px;border-width:0;color:#006732;background-color: #006732"/>
     <H1>Listings</H1>
     <hr style="height:5px;border-width:0;color:#006732;background-color: #006732"/>
     <!-- Search Bar -->
     <div id="searchBar">
        <input class="form-control" id="myInput" type="text" placeholder="Search..">
     </div>
+    <hr style="height:5px;border-width:0;color:#006732;background-color: #006732; margin-bottom: 20px; margin-top: 20px;"/>
     <!-- Sidde Bar Filter Form -->
       <div class="row">
-        <div class=col-md-2>
-          <aside>
-              <div class="card">
-                <!-- Filter Industries -->
-                <article>
-                <header class="card-header">
-                  <a href="#" data-toggle="collapse" data-target="#collapse_aside1">
-                    <h6 class="title">Industries </h6>
-                  </a>
-                </header>
-                <div class="filter-content collapse" id="collapse_aside1">
-                  <div class="card-body">
-                    <p><a href="#">Fin Tech </a></p>
-                    <p><a href="#">Health </a></p>
-                    <p><a href="#">Energy </a></p>
-                    <p><a href="#">Government </a></p>
-                    <p><a href="#">Finance </a></p>
-                  </div>
-                </div>
-              </article>
-                <!-- Filter Location -->
-              <article>
-                <header class="card-header">
-                  <a href="#" data-toggle="collapse" data-target="#collapse_aside2">
-                    <h6 class="title">Location </h6>
-                  </a>
-                </header>
-                <div class="filter-content collapse" id="collapse_aside2">
-                  <div class="card-body">
-                    <p><a href="#">North America </a></p>
-                    <p><a href="#">Europe </a></p>
-                  </div>
-                </div>
-              </article>
-
-              </div>
-
-          </aside>
-        </div>
         <div class="col">
           <div id="accordion">
             <div class="card">
@@ -140,17 +102,41 @@
                 </div>
               </div>
             </div>
+            <div class="card">
+              <div class="card-header" id="headingFour">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Kick Starters 4
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingFive">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Kick Starters 5
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
       
-      <hr style="height:5px;border-width:0;color:#006732;background-color: #006732"/>
+      <hr style="height:5px;border-width:0;color:#006732;background-color: #006732; margin-bottom: 20px; margin-top: 20px;"/>
   </section>
-  <div class="listingButton">
-    <button >View More Kickstarters</button>
-  </div>
-
 
     <!-- Scripts -->
     <script>
