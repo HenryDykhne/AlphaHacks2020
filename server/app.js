@@ -102,7 +102,12 @@ app.get("/getStartupsMatchTags", (req, res) => {
     
     res.status(200).send("success");
 });
-
+async function getUsers(){
+    let response = await fetch('/insertStartup');
+    let data = await response.json()
+    return data;
+}
+getUsers().then(data => console.log(data));
 
 //404  error page *Always Put Last*
 app.use((req, res) => {
