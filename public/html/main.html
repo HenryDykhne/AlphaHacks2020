@@ -2,17 +2,47 @@
 
 <html lang="en">
 
-<!-- Script -->
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<script src="fontawesome.min.js"></script>
+<script>
+  var mockData = [
+	{
+	    "startup_id": 1590878630925,
+	    "name": "StartChain",
+	    "youtube": "https://www.youtube.com/watch?v=SSo_EIwHSd4",
+	    "email": "jeffcarlos@startchain.io",
+	    "content": "We are a group of individuals seeking experienced guidance on monetizing our Smart Contract implementation, preferably in the realm of Fintech and Law. We're looking for forward thinking investors interested in collaborating and shipping an innovative product. We have alot of plans, let\'s connect and make them happen",
+	    "tags":["finance", "tech", "law"]
+	},
 
+	{
+		"startup_id": 2222222222222,
+	    "name": "ShareCare",
+	    "youtube": "https://www.youtube.com/watch?v=1LBu2aslGyA",
+	    "email": "johnmiurda@newimmune.com",
+	    "content": "Founded by a group of exhausted medical staff, we seek to reforge the health industry and erase it's inefficiencies. Our first product enables practitioners and patients to connect without the bureacracy. Patients get the care they need, and practitioners can do they jobs they signed up for. We're looking for several investors, particularly those involved in Health, Government and Tech. Contact John Miurda for our 2021 roadmap and further details.",
+	    "tags":["medicine", "tech", "government"]
+	},
+
+	{
+		"startup_id": 3333333333333,
+	    "name": "Solomon Expeditions Inc.",
+	    "youtube": "https://www.youtube.com/watch?v=p-HxhJLUYhk",
+	    "email": "solomonjames@solomon.com",
+	    "content": "Since establishing in 2010, we've succesfully managed 14 early stage gold exploration projects. We have a team of top geologists and have a solid system of evaluating future projects. So far, we've given our shareholders acquisition options for top performing mines across Ontario. However, we're looking for financing and expertise for some endeavours outside our expertise. We would love to be in conversation with investors in the Mining business! Please talk to Solomon for more details.",
+	    "tags":["mining", "energy"]
+	}
+]
+
+</script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="fontawesome.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <!-- Head Start -->
 <head>
   <title>VCLink</title>
   <meta charset="utf-8" />
-  <meta name="description" content="" />
-  <meta name="keyword" content="VCLink, Buy, Sell," />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
   <title>VC-Link</title>
@@ -20,8 +50,6 @@
   <!-- CSS -->
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <!-- Swiper -->
-  <link   rel="stylesheet"href="../css/swiper.min.css" type="text/css" />
   <!-- Main Css -->
   <link  rel="stylesheet" href="../css/style.css" type="text/css" />
   <!-- Fontawsome -->
@@ -40,6 +68,8 @@
       <li><a href="main.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="companySignUp.html">Company Signup</a></li>
+      <li><a href="ventureSignUp.html">Venture Signup</a></li>
     </ul>
 
   </nav>
@@ -59,78 +89,7 @@
     <!-- Sidde Bar Filter Form -->
       <div class="row">
         <div class="col">
-          <div id="accordion">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    Kick Starter 1
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Kick Starters 2
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Kick Starters 3
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingFour">
-                <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    Kick Starters 4
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingFive">
-                <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    Kick Starters 5
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-          </div>
+            <div id="myData"></div>
         </div>
 
       </div>
@@ -138,18 +97,6 @@
       <hr style="height:5px;border-width:0;color:#006732;background-color: #006732; margin-bottom: 20px; margin-top: 20px;"/>
   </section>
 
-    <!-- Scripts -->
-    <script>
-      $(window).on('scroll', function(){
-    if ($(window).scrollTop()){
-        $('nav').addClass('black');
-    }
-    else
-    {
-        $('nav').removeClass('black');
-    } 
-    });
-    </script>
 
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
