@@ -21,4 +21,22 @@ async function insertStartup(){
         console.error('Error:', error);
     });
 }
-//getUsers().then(data => console.log(data));
+
+
+async function getStartupsMatchTags(){
+    let data = {"tags":["shopping", "dogs"]}
+
+    fetch('/insertStartup', {
+        method: 'POST', // or 'PUT'
+        body: data,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(data => {
+        console.log('Success:', data);
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
+}

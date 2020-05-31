@@ -90,7 +90,15 @@ app.get("/getStartupsMatchTags", (req, res) => {
         WHERE tag_text in (`+ tagList+`)
         GROUP BY startup.startup_id
         HAVING COUNT(*) = ` + req.body.tags.length + `;`;
-        db.run(selectQuery)
+        console.log(selectQuery)
+        db.all(selectQuery, [], (err, rows) => {
+            if (err) {
+                res.status(500).send(err);
+            } else {
+                console.log(rows);
+                res.status(200).send(rows);
+            }
+        });
 
     });
 
@@ -100,7 +108,7 @@ app.get("/getStartupsMatchTags", (req, res) => {
         }
         console.log('Close the database connection.');
     });
-    res.status(200).send()
+    
 });
 
 //404  error page *Always Put Last*
