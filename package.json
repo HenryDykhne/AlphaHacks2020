@@ -8,7 +8,7 @@
     "fetch": "^1.1.0",
     "sqlite": "^4.0.9",
     "sqlite3": "^4.2.0",
-    "swiper": "^5.4.1"
+    "swiper": "^6.5.1"
   },
   "devDependencies": {},
   "scripts": {
